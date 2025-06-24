@@ -26,3 +26,18 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 updateDateTime(); // Initial call
 
+// Show dialog only if screen width is less than 768px (mobile)
+    window.onload = function () {
+      if (window.innerWidth < 768) {
+        document.getElementById("mobile-dialog").style.display = "flex";
+      }
+    };
+
+    function closeDialog() {
+      document.getElementById("mobile-dialog").style.display = "none";
+    }
+
+    function redirectToDesktop() {
+      // Redirect or close tab
+      window.location.href = "https://www.google.com"; // Change to desktop homepage or a warning page
+    }
